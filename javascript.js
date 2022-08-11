@@ -1,5 +1,5 @@
-const computerChoice = getComputerChoice();
-const playerChoice = getPlayerChoice();
+let computerChoice = getComputerChoice();
+let playerChoice = getPlayerChoice();
 let roundWon = playRound(computerChoice, playerChoice);
 
 function getComputerChoice() { 
@@ -13,15 +13,18 @@ function getComputerChoice() {
     }
 }
 function getPlayerChoice() {
-    const playerInput = prompt("Choose your Weapon! Will it be Rock, Paper or Scissor?").toLowerCase(); // user input
-    if (playerInput === "rock") { // compare user input and return choice
+    let playerInput = "Choose Rock";
+    while (playerInput.startsWith("Choose Rock")) {
+        playerInput = prompt("Choose your Weapon! Will it be Rock, Paper or Scissor?").toLowerCase(); // user input
+        if (playerInput === "rock") { // compare user input and return choice
         return "rock";
-    } else if (playerInput === "scissor") {
+        } else if (playerInput === "scissor") {
         return "scissor";
-    } else if(playerInput === "paper") {
+        } else if(playerInput === "paper") {
         return "paper";
-    } else {
+        } else {
         return "Choose Rock, Paper or Scissor only!" // Error - faulty input
+        }
     }
 }
 function playRound(computerChoice, playerChoice) {
@@ -57,6 +60,25 @@ function playRound(computerChoice, playerChoice) {
         }
     }
 }
+/* function game() {
+    let compWins = 0;
+    let playerWins = 0;
+    let draw = 0;
+    for (let i = 0; i < 5; i++) {
+        getComputerChoice();
+        getPlayerChoice();
+        playRound(computerChoice, playerChoice);
+        if (roundWon.startsWith("You win!")) {
+            playerWins++;
+        } else if (roundWon.startsWith("You lose!")) {
+            compWins++;
+        } else {
+            draw++;
+        }
+        console.log("Won: " + playerWins + " Lost: " + compWins + " Draw: " + draw);
+    }
+}
+game(); */
 console.log(computerChoice);
 console.log(playerChoice);
 console.log(roundWon);
