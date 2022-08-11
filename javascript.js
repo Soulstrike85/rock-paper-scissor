@@ -1,6 +1,6 @@
-let computerChoice = "";
-let playerChoice = "Choose Rock";
-let roundWon = "";
+let computerChoice = "";            
+let playerChoice = "Choose Rock";   // set playerChoice to Choose Rock to initialize do...while loop for the first time
+let roundWon = "";                  
 
 function getComputerChoice() { 
     const randomComp = Math.floor(Math.random() * 3); // get random number between 0-2, each number equals one choice
@@ -13,8 +13,8 @@ function getComputerChoice() {
     }
 }
 function getPlayerChoice() {
-    const playerInput = prompt("Choose your Weapon! Will it be Rock, Paper or Scissor?").toLowerCase(); // user input
-    if (playerInput === "rock") { // compare user input and return choice
+    const playerInput = prompt("Choose your Weapon! Will it be Rock, Paper or Scissor?").toLowerCase();     // user input
+    if (playerInput === "rock") {                                // compare user input and return choice
     return playerChoice = "rock";
     } else if (playerInput === "scissor") {
     return playerChoice = "scissor";
@@ -24,7 +24,7 @@ function getPlayerChoice() {
     return playerChoice = "Choose Rock, Paper or Scissor only!" // Error - faulty input
     }
 }
-function playRound(computerChoice, playerChoice) {
+function playRound(computerChoice, playerChoice) { // compares both choices and returns the result in roundWon
     if (computerChoice === "rock") {
         switch (playerChoice) {
             case "paper":
@@ -57,16 +57,16 @@ function playRound(computerChoice, playerChoice) {
         }
     }
 }
-function game() {
-    let compWins = 0; // set computer wins to zero
-    let playerWins = 0; // set player wins to zero
-    let draw = 0; // set draw matches to zero
-    for (let i = 0; i < 5; i++) { // loop the game 5 times
+function game() {                                       // game loop - counts wins, loses and draws - and displays it
+    let compWins = 0;                                       // set computer wins to zero
+    let playerWins = 0;                                     // set player wins to zero
+    let draw = 0;                                           // set draw matches to zero
+    for (let i = 0; i < 5; i++) {                           // loop the game 5 times
         getComputerChoice();
-        do {
+        do {                                                // loops until user inputs allowed content (rock, paper, scissor)
         getPlayerChoice();
-        } while (playerChoice.startsWith("Choose Rock"));
-        playRound(computerChoice, playerChoice);
+        } while (playerChoice.startsWith("Choose Rock"));   // breaks loop if rock, paper or scissor is entered
+        playRound(computerChoice, playerChoice);            
         if (roundWon.startsWith("You win!")) {
             playerWins++;
         } else if (roundWon.startsWith("You lose!")) {
