@@ -1,7 +1,6 @@
 let computerChoice = "";            
 let playerChoice = "Choose Rock";   // set playerChoice to Choose Rock to initialize do...while loop for the first time
 let roundWon = "";                  
-
 function getComputerChoice() { 
     const randomComp = Math.floor(Math.random() * 3); // get random number between 0-2, each number equals one choice
     if (randomComp === 0) {
@@ -12,7 +11,7 @@ function getComputerChoice() {
         return computerChoice = "paper";
     }
 }
-function getPlayerChoice() {
+/*function getPlayerChoice() {
     const playerInput = prompt("Choose your Weapon! Will it be Rock, Paper or Scissor?").toLowerCase();     // user input
     if (playerInput === "rock") {                                // compare user input and return choice
     return playerChoice = "rock";
@@ -22,8 +21,9 @@ function getPlayerChoice() {
     return playerChoice = "paper";
     } else {
     return playerChoice = "Choose Rock, Paper or Scissor only!" // Error - faulty input
-    }
-}
+    } 
+}*/
+
 function playRound(computerChoice, playerChoice) { // compares both choices and returns the result in roundWon
     if (computerChoice === "rock") {
         switch (playerChoice) {
@@ -57,7 +57,7 @@ function playRound(computerChoice, playerChoice) { // compares both choices and 
         }
     }
 }
-function game() {                                       // game loop - counts wins, loses and draws - and displays it
+/* function playGame() {                                       // game loop - counts wins, loses and draws - and displays it
     let compWins = 0;                                       // set computer wins to zero
     let playerWins = 0;                                     // set player wins to zero
     let draw = 0;                                           // set draw matches to zero
@@ -76,8 +76,17 @@ function game() {                                       // game loop - counts wi
         }
         console.log("Won: " + playerWins + " Lost: " + compWins + " Draw: " + draw);
     }
-}
-game(); 
-/* console.log(computerChoice);
-console.log(playerChoice);
-console.log(roundWon); */
+} */
+
+const choice = document.querySelectorAll('button');
+choice.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        playerChoice = button.className;
+        console.log(playerChoice);
+        }); 
+
+}); 
+
+
+
+// console.log(roundWon);
