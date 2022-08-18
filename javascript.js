@@ -83,10 +83,7 @@ const choice = document.querySelectorAll('button');
 choice.forEach((button) => {
     button.addEventListener('click', () => {
         playRound(getComputerChoice(), playerChoice = button.className);
-        console.log(roundWon);
+        alert(roundWon);
         }); 
 
 }); 
-
-
-
