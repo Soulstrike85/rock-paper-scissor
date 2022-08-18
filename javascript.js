@@ -78,15 +78,15 @@ function playRound(computerChoice, playerChoice) { // compares both choices and 
     }
 } */
 
+// select buttons and attach eventListener
 const choice = document.querySelectorAll('button');
 choice.forEach((button) => {
-    button.addEventListener('click', (e) => {
-        playerChoice = button.className;
-        console.log(playerChoice);
+    button.addEventListener('click', () => {
+        playRound(getComputerChoice(), playerChoice = button.className);
+        console.log(roundWon);
         }); 
 
 }); 
 
 
 
-// console.log(roundWon);
