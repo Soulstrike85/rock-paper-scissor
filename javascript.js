@@ -76,6 +76,14 @@ choice.forEach((button) => {
         });
 });
 
+function game_ends(wins, lost) {
+    if (wins === 5) {
+        alert("You've won!");
+    } else if (lost === 5) {
+        alert("You lost!");       
+    }
+}
+
 
 /* 
 loop till one player has 5 wins
