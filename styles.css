@@ -27,11 +27,12 @@ body {
 #playField {
     display: flex;
     flex-flow: column;
-    border: solid red;
+    border: solid yellow;
     height: 100%;
 }
 
 #winner {
     display: flex;
     justify-content: center;
+    border: solid blue
 }

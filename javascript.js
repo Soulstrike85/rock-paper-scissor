@@ -11,18 +11,6 @@ function getComputerChoice() {
         return computerChoice = "paper";
     }
 }
-/*function getPlayerChoice() {
-    const playerInput = prompt("Choose your Weapon! Will it be Rock, Paper or Scissor?").toLowerCase();     // user input
-    if (playerInput === "rock") {                                // compare user input and return choice
-    return playerChoice = "rock";
-    } else if (playerInput === "scissor") {
-    return playerChoice = "scissor";
-    } else if(playerInput === "paper") {
-    return playerChoice = "paper";
-    } else {
-    return playerChoice = "Choose Rock, Paper or Scissor only!" // Error - faulty input
-    } 
-}*/
 
 function playRound(computerChoice, playerChoice) { // compares both choices and returns the result in roundWon
     if (computerChoice === "rock") {
@@ -77,13 +65,19 @@ function playRound(computerChoice, playerChoice) { // compares both choices and 
         console.log("Won: " + playerWins + " Lost: " + compWins + " Draw: " + draw);
     }
 } */
+var wins = document.getElementById("won");
+wins.textContent += "0";
+var lost = document.getElementById("lost");
+lost.textContent += "0";
+var draw = document.getElementById("draw");
+draw.textContent += "0";
 
 // select buttons and attach eventListener
-const choice = document.querySelectorAll('button');
+const choice = document.querySelectorAll("button");
 choice.forEach((button) => {
-    button.addEventListener('click', () => {
+    button.addEventListener("click", () => {
         playRound(getComputerChoice(), playerChoice = button.className);
-        alert(roundWon);
-        }); 
+        
+        });
 
 }); 
