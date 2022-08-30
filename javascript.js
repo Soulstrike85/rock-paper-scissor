@@ -1,5 +1,5 @@
 let computerChoice = "";            
-let playerChoice = "Choose Rock";   // set playerChoice to Choose Rock to initialize do...while loop for the first time
+let playerChoice = "";
 let roundWon = "";                  
 function getComputerChoice() { 
     const randomComp = Math.floor(Math.random() * 3); // get random number between 0-2, each number equals one choice
@@ -45,39 +45,45 @@ function playRound(computerChoice, playerChoice) { // compares both choices and 
         }
     }
 }
-/* function playGame() {                                       // game loop - counts wins, loses and draws - and displays it
-    let compWins = 0;                                       // set computer wins to zero
-    let playerWins = 0;                                     // set player wins to zero
-    let draw = 0;                                           // set draw matches to zero
-    for (let i = 0; i < 5; i++) {                           // loop the game 5 times
-        getComputerChoice();
-        do {                                                // loops until user inputs allowed content (rock, paper, scissor)
-        getPlayerChoice();
-        } while (playerChoice.startsWith("Choose Rock"));   // breaks loop if rock, paper or scissor is entered
-        playRound(computerChoice, playerChoice);            
-        if (roundWon.startsWith("You win!")) {
-            playerWins++;
-        } else if (roundWon.startsWith("You lose!")) {
-            compWins++;
-        } else {
-            draw++;
-        }
-        console.log("Won: " + playerWins + " Lost: " + compWins + " Draw: " + draw);
-    }
-} */
-var wins = document.getElementById("won");
-wins.textContent += "0";
-var lost = document.getElementById("lost");
-lost.textContent += "0";
-var draw = document.getElementById("draw");
-draw.textContent += "0";
+
+let wins = document.getElementById("won");
+wins.textContent += "Wins: 0";
+let lost = document.getElementById("lost");
+lost.textContent += "Lost: 0";
+let draw = document.getElementById("draw");
+draw.textContent += "Draw: 0";
 
 // select buttons and attach eventListener
 const choice = document.querySelectorAll("button");
+
+let win_count = 0;
+let lost_count = 0;
+let draw_count = 0;
 choice.forEach((button) => {
     button.addEventListener("click", () => {
-        playRound(getComputerChoice(), playerChoice = button.className);
-        
+            playRound(getComputerChoice(), playerChoice = button.className);
+            if (roundWon.startsWith("You win!")) {
+                win_count += 1;
+                wins.textContent = (`Wins: ${win_count}`)
+            } else if (roundWon.startsWith("You lose!")) {
+                lost_count += 1;
+                lost.textContent = (`Lost: ${lost_count}`)
+            } else {
+                draw_count += 1;
+                draw.textContent = (`Draw: ${draw_count}`)
+            }
+            game_ends(win_count, lost_count);    
         });
+});
 
-}); 
+
+/* 
+loop till one player has 5 wins
+    declare var to stop loop win_count
+    check if player or comp has won
+    increment win_count by one
+    else increment draw
+    popup when one has won 
+ask for another round (reset)
+    reset win_count to zero
+*/
