@@ -106,17 +106,3 @@ function restartGame() {
 }
 
 let result_screen = document.getElementById("result_modal");
-
-
-/* 
-loop till one player has 5 wins !!
-    declare var to stop loop win_count!!
-    check if player or comp has won!!
-    increment win_count by one!!
-    else increment draw!!
-    popup when one has won ------> draw box instead of alert
-ask for another round (reset) -----> TODO 
-    reset win_count to zero
-
-add graphics 
-*/
