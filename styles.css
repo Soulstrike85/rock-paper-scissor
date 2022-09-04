@@ -3,9 +3,10 @@ body {
     justify-content: center;
 }
 
+
 #gameWindow {
     margin-top: 10vh;
-    border: solid 2px black;
+    border: solid 2px yellow;
     display: flex;
     flex-flow: column nowrap;
     width: 50vw;
@@ -25,14 +26,38 @@ body {
 }
 
 #playField {
+    margin-top: 40px;
     display: flex;
     flex-flow: column;
-    border: solid yellow;
     height: 100%;
 }
 
-#winner {
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.result_content {
     display: flex;
+    flex-flow: column;
     justify-content: center;
-    border: solid blue
+    align-items: center;
+    margin: 40% auto;
+    border: 1px solid black;
+    width: 20%;
+    height: 5%;
+    border-radius: 20px;
+    background-color: brown;
+}
+
+#result_text {
+    margin: 0;
+    font-size: 20px;
+    color: white;
 }

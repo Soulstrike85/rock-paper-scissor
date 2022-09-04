@@ -76,22 +76,47 @@ choice.forEach((button) => {
         });
 });
 
+const result_text = document.getElementById("result_text");
 function game_ends(wins, lost) {
+    const close_btn = document.getElementById("result_close_btn");
     if (wins === 5) {
-        alert("You've won!");
+        result_text.textContent = ("You won");
+        result_screen.style.display="block";
+        close_btn.onclick = () => {
+            restartGame();
+         }
+
     } else if (lost === 5) {
-        alert("You lost!");       
+        result_text.textContent = ("You lost");
+        result_screen.style.display="block";
+        close_btn.onclick = () => {
+            restartGame();   
+        }
     }
 }
 
+function restartGame() {
+    win_count = 0;
+    wins.textContent = "Wins: 0";
+    lost_count = 0;
+    lost.textContent = "Lost: 0";
+    draw_count = 0;
+    draw.textContent = "Draw: 0";
+    result_screen.style.display="none";
+}
+
+let result_screen = document.getElementById("result_modal");
+
 
 /* 
-loop till one player has 5 wins
-    declare var to stop loop win_count
-    check if player or comp has won
-    increment win_count by one
-    else increment draw
-    popup when one has won 
-ask for another round (reset)
+loop till one player has 5 wins !!
+    declare var to stop loop win_count!!
+    check if player or comp has won!!
+    increment win_count by one!!
+    else increment draw!!
+    popup when one has won ------> draw box instead of alert
+ask for another round (reset) -----> TODO 
     reset win_count to zero
+
+add graphics 
 */
