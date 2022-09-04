@@ -1,16 +1,21 @@
 body {
     display: flex;
+    flex-flow: column;
     justify-content: center;
+    align-items: center;
+} 
+
+h1 {
+    text-align: center;
 }
 
-
 #gameWindow {
-    margin-top: 10vh;
-    border: solid 2px yellow;
+    margin-top: 5vh;
+    border: solid 2px black;
     display: flex;
     flex-flow: column nowrap;
     width: 50vw;
-    height: 30vh;
+
 }
 
 #status {
@@ -22,11 +27,10 @@ body {
 #btns {
     display: flex;
     justify-content: space-evenly;
-    border: solid;
+    padding: 25px;
 }
 
 #playField {
-    margin-top: 40px;
     display: flex;
     flex-flow: column;
     height: 100%;
@@ -48,7 +52,7 @@ body {
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    margin: 40% auto;
+    margin: 10% auto;
     border: 1px solid black;
     width: 20%;
     height: 5%;
